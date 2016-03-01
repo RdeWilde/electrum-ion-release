@@ -1,0 +1,3 @@
+[submodule "travis/travis-docker-example"]
+    path = travis/travis-docker-example
+    url = git://github.com/dashdot/travis-docker-example.git

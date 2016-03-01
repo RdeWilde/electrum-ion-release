@@ -21,6 +21,7 @@ if [ "$(uname)" = "Darwin" ];
   pip install  --no-compile -t packages -r ../helpers/requirements.txt
   #pip install  --upgrade  --no-compile -t packages -r ../helpers/requirements.txt
   cp ../python-trezor/trezorctl  packages/trezorctl.py
+  touch packages/google/__init__.py
   /opt/local/bin/python2.7 ~/DEVEL/pyinstaller/pyinstaller.py  --onefile --windowed osx.spec
   test -d ../src || mkdir ../src 
   mv dist/Electrum-DASH.app ../src/ 
