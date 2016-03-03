@@ -4,7 +4,7 @@ cd x11_hash
 git checkout 1.4
 cd ..
 
-  docker run -ti --rm \
+  docker run -t --rm \
    -e WINEPREFIX="/wine/wine-py2.7.8-32" \
    -v $(pwd)/x11_hash:/code \
    -v $(pwd)/helpers:/helpers \
