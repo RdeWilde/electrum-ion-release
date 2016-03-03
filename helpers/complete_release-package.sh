@@ -17,11 +17,12 @@ sign_release () {
 
    
   if [ "${TYPE}" = "SIGNED" ] ; then
-    ${DOCKERBIN} push mazaclub/electrum-dash-winbuild:${VERSION}
-    ${DOCKERBIN} push mazaclub/electrum-dash-release:${VERSION}
-    ${DOCKERBIN} push mazaclub/electrum-dash32-release:${VERSION}
-    ${DOCKERBIN} tag -f ogrisel/python-winbuilder mazaclub/python-winbuilder:${VERSION}
-    ${DOCKERBIN} push mazaclub/python-winbuilder:${VERSION}
+    #${DOCKERBIN} push mazaclub/electrum-dash-winbuild:${VERSION}
+    #${DOCKERBIN} push mazaclub/electrum-dash-release:${VERSION}
+    #${DOCKERBIN} push mazaclub/electrum-dash32-release:${VERSION}
+    #${DOCKERBIN} tag -f ogrisel/python-winbuilder mazaclub/python-winbuilder:${VERSION}
+    #${DOCKERBIN} push mazaclub/python-winbuilder:${VERSION}
+    echo "docker push disabled - build host deprecated by dockerhub"
   fi
 
   if [ "${TYPE}" = "rc" ]; then export TYPE=SIGNED ; fi
