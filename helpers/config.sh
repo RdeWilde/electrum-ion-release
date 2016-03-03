@@ -41,4 +41,5 @@ if [[ -z "$DOCKERBIN" ]]; then
 else
         echo "Using docker at $DOCKERBIN"
 fi
+cp build-config.sh helpers/
 
