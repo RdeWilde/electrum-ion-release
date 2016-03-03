@@ -3,7 +3,7 @@
  git submodule init
  git submodule update
  cd ..
- docker run --privileged -ti --rm \
+ docker run --privileged -t --rm \
    -e WINEPREFIX="/wine/wine-py2.7.8-32" \
    -v $(pwd)/cython-hidapi:/code \
    -v $(pwd)/python-trezor:/trezor \
