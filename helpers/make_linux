@@ -24,6 +24,8 @@ pip install  --target packages -r ../requirements.txt
 cp  /root/electrum-dash-release/python-trezor/trezorctl packages/trezorctl.py
 cp -av /root/packages/google/__init__.py /root/repo/packages/google
 cp /root/electrum-dash-release/source/linux.spec /root/repo
+echo "whoami"
+whoami
 #if [ -d ${TRAVIS_BUILD_DIR} ] ; then 
 #  echo "Building on Travis - moving /root/repo because permissions"
 #  test -d /repo || cp -av /root/repo /
