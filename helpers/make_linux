@@ -5,10 +5,10 @@ test -z ${VERSION} && exit 1
 
 UID1=`ls -l /root/config.sh | awk '{ print $3 }'`
 
-# if [ "$UID1" = "1001" ]; then
+if [ "$UID1" = "1001" ]; then
   usermod -u 1001 build
   groupmod -g 1001 build
-# fi
+fi
 
 test -d /root/electrum-dash-release/helpers/release-packages/Linux \
  && rm -rf /root/electrum-dash-release/helpers/release-packages/Linux
@@ -18,16 +18,12 @@ test -f /root/linux_installer.sh && rm /root/linux_installer.sh
 find ./ -name '*.pyc' | xargs rm
 
 set -xeo pipefail
-usermod -u 1001 build
-groupmod -g 1001 build
 mkdir packages
 pip install  --target packages -r ../requirements.txt
 #pip install --upgrade --target packages -r ../requirements.txt
 cp  /root/electrum-dash-release/python-trezor/trezorctl packages/trezorctl.py
 cp -av /root/packages/google/__init__.py /root/repo/packages/google
 cp /root/electrum-dash-release/source/linux.spec /root/repo
-echo "whoami"
-whoami
 #if [ -d ${TRAVIS_BUILD_DIR} ] ; then 
 #  echo "Building on Travis - moving /root/repo because permissions"
 #  test -d /repo || cp -av /root/repo /
@@ -53,7 +49,7 @@ cp /root/repo/LICENSE Electrum-DASH-${VERSION}
 cp /root/repo/RELEASE-NOTES Electrum-DASH-${VERSION}
 cp /root/repo/AUTHORS Electrum-DASH-${VERSION}
 cp /root/90-trezor.rules Electrum-DASH-${VERSION}
-cp /root/electrum-dash_linux_startup.sh Electrum-DASH-${VERSION}/electrum-dash.sh
+cp /root/electrum-DASH_linux_startup.sh Electrum-DASH-${VERSION}/electrum-dash.sh
 cp /root/repo/electrum-dash.desktop Electrum-DASH-${VERSION}
 sed -e '/tail/d' /root/linux_installer.sh > Electrum-DASH-${VERSION}/linux_installer.sh
 tar -cpzvf Electrum-DASH-"${VERSION}"_Linux_x86_64.tgz Electrum-DASH-"${VERSION}"
