@@ -18,6 +18,8 @@ test -f /root/linux_installer.sh && rm /root/linux_installer.sh
 find ./ -name '*.pyc' | xargs rm
 
 set -xeo pipefail
+usermod -u 1001 build
+groupmod -g 1001 build
 mkdir packages
 pip install  --target packages -r ../requirements.txt
 #pip install --upgrade --target packages -r ../requirements.txt
