@@ -5,10 +5,10 @@ test -z ${VERSION} && exit 1
 
 UID1=`ls -l /root/config.sh | awk '{ print $3 }'`
 
-if [ "$UID1" = "1001" ]; then
+# if [ "$UID1" = "1001" ]; then
   usermod -u 1001 build
   groupmod -g 1001 build
-fi
+# fi
 
 test -d /root/electrum-dash-release/helpers/release-packages/Linux \
  && rm -rf /root/electrum-dash-release/helpers/release-packages/Linux
