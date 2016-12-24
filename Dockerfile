@@ -36,7 +36,7 @@ ENV PIP $PYTHON -m pip
 # RUN (echo electrum;echo electrum)|vnc4passwd
 # EXPOSE 5933
 
-
+RUN wineboot --update
 
 # Docker kills this run before wine is done setting up, don't remove the sleep
 RUN xvfb-run -a --server-num=4 wineboot && sleep 5 \
