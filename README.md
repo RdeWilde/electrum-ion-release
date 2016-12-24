@@ -1,4 +1,4 @@
-## Electrum-DASH Release Packaging system
+## Electrum-ION Release Packaging system
  
  * Builds multiplatform release
  * Builds 32bit Windows release & Instaler 
