@@ -9,7 +9,7 @@ RUN apt-get update -y \
      && dpkg --add-architecture i386 \
      && ln -sf /bin/true /sbin/initctl \
      && apt-get update -y \
-     && apt-get install -y curl wine1.7 xvfb wget \
+     && apt-get install -y --no-install-recommends curl wine1.7 xvfb wget \
         zip \
         winbind \
      && apt-get install -y python-pip pyqt4-dev-tools \
