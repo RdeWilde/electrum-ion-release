@@ -15,9 +15,9 @@ RUN apt-get update -y \
         winbind \
      && apt-get install -y python-pip pyqt4-dev-tools \
      && apt-get purge -y python-software-properties \
-     && apt remove upstart udev \
+     && apt remove -y upstart udev \
      && apt-get autoclean -y \
-     && apt-get autoremove
+     && apt-get autoremove -y
      
      
 RUN apt-get install -y unzip
