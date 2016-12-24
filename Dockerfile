@@ -6,12 +6,15 @@ VOLUME ["/opt/wine-electrum/drive_c/electrum-dash"]
 
 RUN apt-get update -y \
      && apt-get install -y software-properties-common && add-apt-repository -y ppa:ubuntu-wine/ppa \
+     && dpkg --add-architecture i386 \
      && apt-get update -y \
-     && apt-get install -y --no-install-recommends wine xvfb wget \
+     && apt-get install -y curl wine1.7 xvfb wget \
         zip \
         winbind \
+     && apt-get install -y python-pip pyqt4-dev-tools \
      && apt-get purge -y python-software-properties \
      && apt-get autoclean -y 
+     
 RUN apt-get install -y unzip
 
 # Versions
