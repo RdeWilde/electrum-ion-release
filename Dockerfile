@@ -7,6 +7,7 @@ VOLUME ["/opt/wine-electrum/drive_c/electrum-dash"]
 RUN apt-get update -y \
      && apt-get install -y software-properties-common && add-apt-repository -y ppa:ubuntu-wine/ppa \
      && dpkg --add-architecture i386 \
+     && dpkg-divert --local --rename --add /sbin/initctl \
      && ln -sf /bin/true /sbin/initctl \
      && apt-get update -y \
      && apt-get install -y --no-install-recommends curl wine1.7 xvfb wget \
